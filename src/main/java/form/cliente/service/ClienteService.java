@@ -7,4 +7,7 @@ import java.util.List;
 public interface ClienteService {
     ResponseDTO create(RequestDTO requestDTO);
     List<ResponseDTO> read();
+    ResponseDTO readId(Long id);
+    ResponseDTO update(Long id, RequestDTO requestDTO);
+    void delete(Long id);
 }
