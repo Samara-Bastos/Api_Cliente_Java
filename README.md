@@ -1,4 +1,4 @@
-API Cliente
+# API Cliente
 
 ## Sobre
 Esta API permite a criação, visualização, atualização e exclusão de registros de clientes. Ela é construída utilizando Java com Spring Boot, com integração ao banco de dados PostgreSQL para armazenamento persistente dos dados dos clientes.
@@ -11,7 +11,7 @@ Este projeto utiliza o Docker para gerenciar o banco de dados. Para iniciar, sig
 - Após este passo, você pode rodar o projeto normalmente e realizar as requisições.
 
  
-## 🗃️ **Dependências:**
+## Dependências:
 - Spring Data JPA
 - Spring Web
 - PostgreSQL Driver
