@@ -23,17 +23,17 @@ Este projeto utiliza o Docker para gerenciar o banco de dados. Para iniciar, sig
 
 ## Endpoints
 
-- Endpoint POST: /cliente/create
+Endpoint POST: /cliente/create
 - Descrição: Permite a criação de um novo cliente no banco de dados.
 
-- Endpoint GET: /cliente
+Endpoint GET: /cliente
 - Descrição: Permite a visualização de todos os clientes registrados.
 
-- Endpoint GET: /cliente/id
+Endpoint GET: /cliente/
 - Descrição: Permite a visualização do cliente responsável pelo identificador mencionado.
 
-- Endpoint PUT: /cliente/update/id
+Endpoint PUT: /cliente/update/
 - Descrição: Permite a atualização das informações do cliente.
 
-- Endpoint DELETE: /cliente/delete/id
+Endpoint DELETE: /cliente/delete/
 - Descrição: Permite a exclusão do cliente no banco de dados.
