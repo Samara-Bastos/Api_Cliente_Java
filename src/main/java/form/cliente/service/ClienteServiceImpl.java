@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import form.cliente.dto.RequestDTO;
 import form.cliente.dto.ResponseDTO;
 import form.cliente.entity.Cliente;
+import form.cliente.exception.FindClienteException;
+import form.cliente.exception.NotFoundClienteException;
 import form.cliente.mapper.ClienteMapper;
 import form.cliente.repository.ClienteRepository;
 import java.util.List;
@@ -21,7 +23,7 @@ public class ClienteServiceImpl implements ClienteService{
     public ResponseDTO create(RequestDTO requestDTO){
         Optional<Cliente> clienteReturn = clienteRepository.findByEmail(requestDTO.email());
         if(clienteReturn.isPresent()){
-            
+            throw new FindClienteException("Já existe um cliente cadastrado com esse email");
         }
         Cliente cliente = ClienteMapper.INSTANCE.dtoToCliente(requestDTO);
         clienteRepository.save(cliente);
@@ -43,7 +45,7 @@ public class ClienteServiceImpl implements ClienteService{
     public ResponseDTO update(Long id, RequestDTO requestDTO){
         Optional<Cliente> clienteReturn = clienteRepository.findById(id);
         if(clienteReturn.isEmpty()){
-            
+            throw new NotFoundClienteException("Não existe nenhum cliente com esse identificador");
         }
         Cliente cliente = ClienteMapper.INSTANCE.dtoToCliente(requestDTO);
 
@@ -65,7 +67,7 @@ public class ClienteServiceImpl implements ClienteService{
     public void delete(Long id){
         Optional<Cliente> clienteReturn = clienteRepository.findById(id);
         if(clienteReturn.isEmpty()){
-            
+            throw new NotFoundClienteException("Não existe nenhum cliente com esse identificador");
         }
         clienteRepository.delete(clienteReturn.get());
     };
