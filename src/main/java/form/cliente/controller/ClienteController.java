@@ -18,7 +18,7 @@ import form.cliente.dto.ResponseDTO;
 import form.cliente.service.ClienteService;
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins =  {"http://localhost:3000", "https://formulario-cliente.onrender.com"})
 @RestController
 @RequestMapping("/cliente")
 public class ClienteController {
