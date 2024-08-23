@@ -37,17 +37,17 @@ public class ClienteController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<ResponseDTO> readId(@PathVariable Long id){
+    public ResponseEntity<ResponseDTO> readId(@PathVariable("id") Long id){
         return ResponseEntity.status(HttpStatus.OK).body(clienteService.readId(id));
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<ResponseDTO> update(@PathVariable Long id, @RequestBody @Valid RequestDTO requestDTO ){
+    public ResponseEntity<ResponseDTO> update(@PathVariable("id") Long id, @RequestBody @Valid RequestDTO requestDTO ){
         return ResponseEntity.status(HttpStatus.OK).body(clienteService.update(id, requestDTO));
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id){
+    public ResponseEntity<Void> delete(@PathVariable("id") Long id){
         clienteService.delete(id);
         return ResponseEntity.noContent().build();
     }
